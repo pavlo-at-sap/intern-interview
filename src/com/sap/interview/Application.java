@@ -1,11 +1,7 @@
 package com.sap.interview;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 import static com.sap.interview.CustomerService.getCustomers;
 
@@ -22,7 +18,7 @@ public class Application {
      * Ordering more than 3 items of same product gives additional 10% of discount for that product.
      */
     public static double getTotal(Customer customer) {
-        throw new NotImplementedException();
+        throw new RuntimeException();
     }
 
     enum Membership {
