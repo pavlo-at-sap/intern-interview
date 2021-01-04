@@ -21,90 +21,90 @@ public class Application {
         throw new RuntimeException();
     }
 
-    enum Membership {
-        REGULAR,
-        PREMIUM,
-        DIAMOND
+}
+
+enum Membership {
+    REGULAR,
+    PREMIUM,
+    DIAMOND
+}
+
+class Customer {
+    private final String name;
+    private final Membership membership;
+    private final List<Order> orders;
+
+    public Customer(String name, Membership membership, List<Order> orders) {
+        this.name = name;
+        this.membership = membership;
+        this.orders = orders;
     }
 
-    static class Customer {
-        private final String name;
-        private final Membership membership;
-        private final List<Order> orders;
-
-        public Customer(String name, Membership membership, List<Order> orders) {
-            this.name = name;
-            this.membership = membership;
-            this.orders = orders;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public Membership getMembership() {
-            return membership;
-        }
-
-        public List<Order> getOrders() {
-            return orders;
-        }
+    public String getName() {
+        return name;
     }
 
-    static class Order {
-        private final List<OrderItem> items;
-
-        public Order(List<OrderItem> items) {
-            this.items = items;
-        }
-
-        public List<OrderItem> getItems() {
-            return items;
-        }
+    public Membership getMembership() {
+        return membership;
     }
 
-    static class OrderItem {
-        private final Product product;
-        private final int amount;
+    public List<Order> getOrders() {
+        return orders;
+    }
+}
 
-        public OrderItem(Product product, int amount) {
-            this.product = product;
-            this.amount = amount;
-        }
+class Order {
+    private final List<OrderItem> items;
 
-        public Product getProduct() {
-            return product;
-        }
-
-        public int getAmount() {
-            return amount;
-        }
+    public Order(List<OrderItem> items) {
+        this.items = items;
     }
 
-    static class Product {
-        private final String title;
-        private final double price;
+    public List<OrderItem> getItems() {
+        return items;
+    }
+}
 
-        public Product(String title, double price) {
-            this.title = title;
-            this.price = price;
-        }
+class OrderItem {
+    private final Product product;
+    private final int amount;
 
-        public String getTitle() {
-            return title;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Product product = (Product) o;
-            return Objects.equals(title, product.title);
-        }
+    public OrderItem(Product product, int amount) {
+        this.product = product;
+        this.amount = amount;
     }
 
+    public Product getProduct() {
+        return product;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+}
+
+class Product {
+    private final String title;
+    private final double price;
+
+    public Product(String title, double price) {
+        this.title = title;
+        this.price = price;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(title, product.title);
+    }
 }

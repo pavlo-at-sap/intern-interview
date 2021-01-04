@@ -3,8 +3,6 @@ package com.sap.interview;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.sap.interview.Application.*;
-
 public class CustomerService {
 
     public static List<Customer> getCustomers() {
