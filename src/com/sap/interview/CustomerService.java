@@ -7,17 +7,21 @@ public class CustomerService {
 
     public static List<Customer> getCustomers() {
         Product tomato = new Product("Tomato", 12.0);
+        Product tomato2 = new Product("Tomato", 12.0);
         Product carrot = new Product("Carrot", 7.5);
+        Product carrot2 = new Product("Carrot", 7.5);
         Product potato = new Product("Potato", 3.25);
+        Product potato2 = new Product("Potato", 3.25);
         Product cucumber = new Product("Cucumber", 9.75);
+        Product cucumber2 = new Product("Cucumber", 9.75);
         OrderItem item1 = new OrderItem(tomato, 2);
         OrderItem item2 = new OrderItem(carrot, 4);
         OrderItem item3 = new OrderItem(potato, 1);
         OrderItem item4 = new OrderItem(cucumber, 9);
-        OrderItem item5 = new OrderItem(tomato, 3);
-        OrderItem item6 = new OrderItem(carrot, 5);
-        OrderItem item7 = new OrderItem(potato, 7);
-        OrderItem item8 = new OrderItem(cucumber, 6);
+        OrderItem item5 = new OrderItem(tomato2, 3);
+        OrderItem item6 = new OrderItem(carrot2, 5);
+        OrderItem item7 = new OrderItem(potato2, 7);
+        OrderItem item8 = new OrderItem(cucumber2, 6);
         Order order1 = new Order(Arrays.asList(item1, item3));
         Order order2 = new Order(Arrays.asList(item2, item8, item6));
         Order order3 = new Order(Arrays.asList(item4, item5, item7));
